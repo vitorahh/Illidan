@@ -11,11 +11,6 @@ const app = express();
 const httpServer = createServer(app);
 const path = require('path');
 
-window.onload=function(){
-  if(window.location.protocol==="https:")
-          window.location.protocol="http";
-}
-
 //Controllers ou Routes
 const UserController = require('./Controllers/UserController');
 const PersonagensController = require('./Controllers/PersonagensController');
