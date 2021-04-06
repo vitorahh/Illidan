@@ -11,7 +11,10 @@ const app = express();
 const httpServer = createServer(app);
 const path = require('path');
 
-
+window.onload=function(){
+  if(window.location.protocol==="https:")
+          window.location.protocol="http";
+}
 
 //Controllers ou Routes
 const UserController = require('./Controllers/UserController');
@@ -61,5 +64,5 @@ WebScoket.on('connection', (socket:Socket) =>{
 
 
 httpServer.listen(process.env.PORT || 6060, () => {
-    console.log(`Server ON - https://illidanapp.herokuapp.com/`);
+    console.log(`Server ON - http://illidanapp.herokuapp.com/`);
 });
