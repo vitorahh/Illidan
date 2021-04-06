@@ -6,15 +6,12 @@ import cors from 'cors';
 import { createServer } from "http";
 import { Server, Socket } from "socket.io";
 
+
 const app = express();
 const httpServer = createServer(app);
 const path = require('path');
 
-export const WebScoket = new Server(httpServer, {
-    cors: {
-      origin: "*"
-    }
-  });
+export const WebScoket = require('socket.io')(httpServer);
 
 
 //Controllers ou Routes
