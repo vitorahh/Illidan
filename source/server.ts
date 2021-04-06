@@ -40,7 +40,11 @@ app.get('/', (req,res)=>{
         })
 })
 
-export const WebScoket = require('socket.io')(httpServer);
+export const WebScoket = require('socket.io')(httpServer,{
+  cors: {
+    origin: '*',
+  }
+});
 
 WebScoket.on('connection', (socket:Socket) =>{
     console.log(socket.id);
