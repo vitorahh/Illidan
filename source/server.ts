@@ -41,7 +41,7 @@ app.get('/', (req,res)=>{
         })
 })
 
-
+WebScoket.set('transports', ['websocket']);
 WebScoket.on('connection', (socket:Socket) =>{
     console.log(socket.id);
     console.log(socket.handshake.auth)
