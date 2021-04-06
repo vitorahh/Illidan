@@ -11,7 +11,7 @@ const app = express();
 const httpServer = createServer(app);
 const path = require('path');
 
-export const WebScoket = require('socket.io')(httpServer,);
+export const WebScoket = require('socket.io')(httpServer);
 
 
 //Controllers ou Routes
