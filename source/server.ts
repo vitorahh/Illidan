@@ -11,7 +11,6 @@ const app = express();
 const httpServer = createServer(app);
 const path = require('path');
 
-export const WebScoket = require('socket.io')(httpServer);
 
 
 //Controllers ou Routes
@@ -41,6 +40,7 @@ app.get('/', (req,res)=>{
         })
 })
 
+export const WebScoket = require('socket.io')(httpServer);
 
 WebScoket.on('connection', (socket:Socket) =>{
     console.log(socket.id);
